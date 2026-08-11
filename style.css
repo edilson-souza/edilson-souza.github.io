@@ -44,7 +44,7 @@ header {
     color: var(--text-accent);
     font-weight: bold;
     font-size: 1rem;
-    letter-spacing: 1px;
+    letter-spacing: 10px;
     text-align: left;
 }
 
