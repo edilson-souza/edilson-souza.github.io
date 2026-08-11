@@ -217,3 +217,12 @@ footer {
         font-size: 2.2rem;
     }
 }
+
+.terminal-prompt img {
+    width: 200px;         /* Tamanho da imagem (ajuste conforme necessário) */
+    height: 200px;        /* Altura igual para manter o formato */
+    border-radius: 70%;  /* Deixa a imagem redonda (estilo avatar) */
+    object-fit: cover;   /* Garante que a foto não fique distorcida */
+    vertical-align: middle; /* Alinha a imagem verticalmente com a linha de texto */
+    border: 2px solid #58a6ff; /* Adiciona uma borda azul (opcional, estilo Github) */
+}
