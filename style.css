@@ -22,37 +22,43 @@ body {
 header {
     position: fixed;
     top: 0;
-    width: 100%;
-    background-color: rgba(13, 17, 23, 0.9);
+    left: 0;
+    width: 100vw;
+    background-color: rgba(13, 17, 23, 0.95);
     backdrop-filter: blur(5px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
 }
 
 .nav-container {
-    max-width: 1100px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1.2rem 3rem;
+    box-sizing: border-box;
 }
 
 .logo {
     color: var(--text-accent);
     font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-align: left;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .nav-links a {
     color: var(--text-primary);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
     transition: color 0.3s;
 }
 
@@ -71,7 +77,19 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center; /* Centraliza tudo horizontalmente na tela */
+    text-align: center;  /* Centraliza os textos */
+    padding: 0 1.5rem;   /* Garante espaçamento lateral seguro em telas menores */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Mantém a imagem, textos e botões perfeitamente alinhados ao centro */
+    max-width: 800px;
+    width: 100%;
 }
 
 .terminal-prompt {
