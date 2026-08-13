@@ -185,27 +185,70 @@ section {
     border-color: var(--text-accent);
 }
 
+/* Configuração da grade */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 1.5rem;
+    align-items: stretch;
 }
 
+/* Card estruturado em colunas flexíveis */
 .project-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     padding: 2rem;
     border-radius: 8px;
-    transition: border-color 0.3s;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
     border-color: var(--text-accent);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
+/* Bloco superior fixo para o Título (garante que o conteúdo abaixo comece alinhado) */
 .project-card h3 {
     color: #ffffff;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
+    line-height: 1.4;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.8rem;
+    
+    /* Trava uma altura idêntica para o espaço dos títulos em todos os cards */
+    height: 4.8rem; 
+    display: flex;
+    align-items: center;
+}
+
+/* Container flex para o conteúdo restante (Tag de data/cargo + Descrição) */
+.project-card .card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Estilização da tag de período / badge */
+.project-card p strong {
+    color: var(--text-accent);
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    background: rgba(88, 166, 255, 0.1);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid rgba(88, 166, 255, 0.2);
+}
+
+/* Descrição do card */
+.project-card p {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    line-height: 1.6;
 }
 
 .contact-text {
@@ -268,3 +311,85 @@ footer {
   .whatsapp-btn:hover {
     background-color: #1ebe5d;
   }
+
+  /* Ajuste fino para os cards de projetos e experiências */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.project-card:hover {
+    border-color: var(--text-accent);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Título de cada card (Cargo / Empresa) */
+.project-card h3 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.8rem;
+}
+
+/* Estilização dos parágrafos internos do card (Datas e Descrições) */
+.project-card p {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Destrização sutil para o período/datas (caso use strong ou linhas separadas) */
+.project-card p strong {
+    color: var(--text-accent);
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    background: rgba(88, 166, 255, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid rgba(88, 166, 255, 0.2);
+}
+
+/* Container que centraliza e coloca os botões lado a lado */
+.social-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Espaço de separação entre os dois botões */
+    width: 100%;
+    margin-top: 1.5rem;
+    flex-wrap: wrap; /* Garante responsividade caso a tela seja muito pequena */
+}
+
+/* Estilo do botão do Instagram (seguindo o mesmo padrão do WhatsApp) */
+.instagram-btn {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transition: opacity 0.3s;
+}
+
+.instagram-btn:hover {
+    opacity: 0.9;
+}
