@@ -161,6 +161,7 @@ section {
     gap: 1rem;
 }
 
+/* Estilização dos cards de tecnologia com ícones */
 .stack-item {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -168,7 +169,15 @@ section {
     border-radius: 6px;
     text-align: center;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espaço entre o ícone e o texto */
     transition: transform 0.3s, border-color 0.3s;
+}
+
+.stack-item i {
+    font-size: 1.2rem; /* Tamanho dos ícones */
 }
 
 .stack-item:hover {
