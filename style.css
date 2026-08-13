@@ -253,3 +253,18 @@ footer {
     vertical-align: middle; /* Alinha a imagem verticalmente com a linha de texto */
     border: 2px solid #58a6ff; /* Adiciona uma borda azul (opcional, estilo Github) */
 }
+
+.whatsapp-btn {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transition: background 0.3s;
+  }
+  .whatsapp-btn:hover {
+    background-color: #1ebe5d;
+  }
