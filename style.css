@@ -367,9 +367,8 @@ footer {
 /* --- AJUSTES DE RESPONSIVIDADE PARA CELULARES E TABLETS --- */
 
 @media (max-width: 768px) {
-    /* Ajusta o espaçamento lateral geral do header em telas menores */
-    .nav-container {
-        padding: 1rem 1.5rem;
+    .menu-toggle {
+        display: block; /* Mostra os três traços no celular */
     }
 
     /* Reduz o espaçamento exagerado das letras da logo para caber na tela do celular */
@@ -380,9 +379,29 @@ footer {
 
     /* Transforma o menu de navegação para um formato compacto ou centralizado no mobile */
     .nav-links {
-        display: flex;
-        gap: 1rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(5, 8, 5, 0.98);
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        
+        /* Oculta o menu inicialmente */
+        display: none; 
     }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0.8rem 0;
+    }
+}
 
     .nav-links a {
         font-size: 0.75rem; /* Letras menores para caberem no topo */
@@ -402,8 +421,8 @@ footer {
     .terminal-prompt img {
         width: 140px;
         height: 140px;
-    }
 }
+
 
 /* Para telas muito pequenas (smartphones compactos abaixo de 480px) */
 @media (max-width: 480px) {
@@ -419,4 +438,11 @@ footer {
         letter-spacing: 1px;
         font-size: 0.75rem;
     }
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-accent);
 }
