@@ -1,9 +1,9 @@
 :root {
-    --bg-color: #0d1117;
-    --card-bg: #161b22;
-    --text-primary: #c9d1d9;
-    --text-accent: #58a6ff;
-    --border-color: #30363d;
+    --bg-color: #050805;       /* Preto com um tom sutilmente esverdeado/escuro */
+    --card-bg: #0a120a;       /* Fundo dos cards escuro com toque militar/matrix */
+    --text-primary: #c9d1d9;   /* Texto principal limpo para leitura */
+    --text-accent: #00ff66;    /* Verde Matrix vibrante para destaques */
+    --border-color: #1b3a1b;   /* Borda verde escurecida (estilo terminal) */
 }
 
 * {
@@ -24,7 +24,7 @@ header {
     top: 0;
     left: 0;
     width: 100vw;
-    background-color: rgba(13, 17, 23, 0.95);
+    background-color: rgba(5, 8, 5, 0.95);
     backdrop-filter: blur(5px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
@@ -46,6 +46,7 @@ header {
     font-size: 1rem;
     letter-spacing: 10px;
     text-align: left;
+    text-shadow: 0 0 8px rgba(0, 255, 102, 0.4);
 }
 
 .nav-links {
@@ -59,11 +60,12 @@ header {
     text-decoration: none;
     font-size: 0.85rem;
     letter-spacing: 1px;
-    transition: color 0.3s;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 .nav-links a:hover {
     color: var(--text-accent);
+    text-shadow: 0 0 8px rgba(0, 255, 102, 0.6);
 }
 
 section {
@@ -77,9 +79,9 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Centraliza tudo horizontalmente na tela */
-    text-align: center;  /* Centraliza os textos */
-    padding: 0 1.5rem;   /* Garante espaçamento lateral seguro em telas menores */
+    align-items: center;
+    text-align: center;
+    padding: 0 1.5rem;
     width: 100%;
     box-sizing: border-box;
 }
@@ -87,28 +89,46 @@ section {
 .hero-content {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Mantém a imagem, textos e botões perfeitamente alinhados ao centro */
+    align-items: center;
     max-width: 800px;
     width: 100%;
 }
 
 .terminal-prompt {
-    color: #7ee787;
+    color: #00ff66 !important;
     font-size: 1.1rem;
     margin-bottom: 1rem;
     display: block;
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.5);
+}
+
+.terminal-prompt img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00ff66;
+    box-shadow: 0 0 25px rgba(0, 255, 102, 0.3);
+    margin-bottom: 1.5rem;
 }
 
 #hero h1 {
     font-size: 3rem;
     color: #ffffff;
     margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 #hero .subtitle {
-    font-size: 1.2rem;
+    font-family: 'Courier New', Courier, monospace;
     color: #8b949e;
+    font-size: 1.2rem;
     margin-bottom: 2rem;
+}
+
+#hero .subtitle span {
+    color: #00ff66;
+    text-shadow: 0 0 8px rgba(0, 255, 102, 0.4);
 }
 
 .social-links {
@@ -127,8 +147,9 @@ section {
 }
 
 .social-links a:hover {
-    border-color: var(--text-accent);
-    color: var(--text-accent);
+    border-color: #00ff66;
+    color: #00ff66;
+    box-shadow: 0 0 12px rgba(0, 255, 102, 0.2);
 }
 
 .section-title span {
@@ -142,6 +163,8 @@ section {
     color: #ffffff;
     margin-top: 0.5rem;
     margin-bottom: 2rem;
+    border-left: 3px solid #00ff66;
+    padding-left: 10px;
 }
 
 .about-text {
@@ -149,6 +172,7 @@ section {
     padding: 2rem;
     border: 1px solid var(--border-color);
     border-radius: 8px;
+    box-shadow: inset 0 0 15px rgba(0, 255, 102, 0.02);
 }
 
 .about-text p {
@@ -161,7 +185,6 @@ section {
     gap: 1rem;
 }
 
-/* Estilização dos cards de tecnologia com ícones */
 .stack-item {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -172,151 +195,25 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* Espaço entre o ícone e o texto */
-    transition: transform 0.3s, border-color 0.3s;
+    gap: 10px;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 .stack-item i {
-    font-size: 1.2rem; /* Tamanho dos ícones */
+    font-size: 1.2rem;
 }
 
-.stack-item:hover {
-    transform: translateY(-3px);
-    border-color: var(--text-accent);
+.stack-item:hover, .project-card:hover {
+    border-color: #00ff66 !important;
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.2);
+    transform: translateY(-4px);
 }
 
-/* Configuração da grade */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 1.5rem;
     align-items: stretch;
-}
-
-/* Card estruturado em colunas flexíveis */
-.project-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    padding: 2rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-card:hover {
-    border-color: var(--text-accent);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
-
-/* Bloco superior fixo para o Título (garante que o conteúdo abaixo comece alinhado) */
-.project-card h3 {
-    color: #ffffff;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    line-height: 1.4;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.8rem;
-    
-    /* Trava uma altura idêntica para o espaço dos títulos em todos os cards */
-    height: 4.8rem; 
-    display: flex;
-    align-items: center;
-}
-
-/* Container flex para o conteúdo restante (Tag de data/cargo + Descrição) */
-.project-card .card-content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-/* Estilização da tag de período / badge */
-.project-card p strong {
-    color: var(--text-accent);
-    font-size: 0.8rem;
-    display: inline-block;
-    margin-bottom: 0.8rem;
-    background: rgba(88, 166, 255, 0.1);
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
-    border: 1px solid rgba(88, 166, 255, 0.2);
-}
-
-/* Descrição do card */
-.project-card p {
-    color: var(--text-primary);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.contact-text {
-    margin-bottom: 1.5rem;
-}
-
-.btn-email {
-    display: inline-block;
-    background: var(--text-accent);
-    color: #0d1117;
-    padding: 0.8rem 1.5rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: opacity 0.3s;
-}
-
-.btn-email:hover {
-    opacity: 0.9;
-}
-
-footer {
-    text-align: center;
-    padding: 3rem;
-    border-top: 1px solid var(--border-color);
-    color: #8b949e;
-    font-size: 0.85rem;
-    margin-top: 4rem;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    #hero h1 {
-        font-size: 2.2rem;
-    }
-}
-
-.terminal-prompt img {
-    width: 200px;         /* Tamanho da imagem (ajuste conforme necessário) */
-    height: 200px;        /* Altura igual para manter o formato */
-    border-radius: 70%;  /* Deixa a imagem redonda (estilo avatar) */
-    object-fit: cover;   /* Garante que a foto não fique distorcida */
-    vertical-align: middle; /* Alinha a imagem verticalmente com a linha de texto */
-    border: 2px solid #58a6ff; /* Adiciona uma borda azul (opcional, estilo Github) */
-}
-
-.whatsapp-btn {
-    display: inline-block;
-    background-color: #25D366;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-    transition: background 0.3s;
-  }
-  .whatsapp-btn:hover {
-    background-color: #1ebe5d;
-  }
-
-  /* Ajuste fino para os cards de projetos e experiências */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
 }
 
 .project-card {
@@ -330,13 +227,6 @@ footer {
     justify-content: flex-start;
 }
 
-.project-card:hover {
-    border-color: var(--text-accent);
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
-
-/* Título de cada card (Cargo / Empresa) */
 .project-card h3 {
     color: #ffffff;
     font-size: 1.1rem;
@@ -346,50 +236,187 @@ footer {
     padding-bottom: 0.8rem;
 }
 
-/* Estilização dos parágrafos internos do card (Datas e Descrições) */
 .project-card p {
     color: var(--text-primary);
     font-size: 0.9rem;
     line-height: 1.6;
 }
 
-/* Destrização sutil para o período/datas (caso use strong ou linhas separadas) */
 .project-card p strong {
-    color: var(--text-accent);
+    color: #00ff66;
     font-size: 0.85rem;
     display: inline-block;
     margin-bottom: 0.5rem;
-    background: rgba(88, 166, 255, 0.1);
+    background: rgba(0, 255, 102, 0.08);
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
-    border: 1px solid rgba(88, 166, 255, 0.2);
+    border: 1px solid rgba(0, 255, 102, 0.2);
 }
 
-/* Container que centraliza e coloca os botões lado a lado */
+.contact-text {
+    margin-bottom: 1.5rem;
+}
+
 .social-buttons-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem; /* Espaço de separação entre os dois botões */
+    gap: 1rem;
     width: 100%;
     margin-top: 1.5rem;
-    flex-wrap: wrap; /* Garante responsividade caso a tela seja muito pequena */
+    flex-wrap: wrap;
 }
 
-/* Estilo do botão do Instagram (seguindo o mesmo padrão do WhatsApp) */
-.instagram-btn {
+.whatsapp-btn {
     display: inline-flex;
     align-items: center;
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    color: white;
+    background-color: #102e19;
+    color: #00ff66;
+    border: 1px solid #00ff66;
     padding: 12px 20px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    font-family: Arial, sans-serif;
-    transition: opacity 0.3s;
+    font-family: monospace;
+    transition: all 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background-color: #00ff66;
+    color: #050805;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
+}
+
+.instagram-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #1a0f1a;
+    color: #ff3399;
+    border: 1px solid #ff3399;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: monospace;
+    transition: all 0.3s;
 }
 
 .instagram-btn:hover {
-    opacity: 0.9;
+    background-color: #ff3399;
+    color: #050805;
+    box-shadow: 0 0 15px rgba(255, 51, 153, 0.4);
+}
+
+.cyber-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: #00ff66;
+    font-family: monospace;
+    background: rgba(0, 255, 102, 0.05);
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 255, 102, 0.3);
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.1);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #00ff66;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.7);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 255, 102, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(0, 255, 102, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 255, 102, 0);
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 3rem;
+    border-top: 1px solid var(--border-color);
+    color: #557755;
+    font-size: 0.85rem;
+    margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    #hero h1 {
+        font-size: 2.2rem;
+    }
+}
+
+/* --- AJUSTES DE RESPONSIVIDADE PARA CELULARES E TABLETS --- */
+
+@media (max-width: 768px) {
+    /* Ajusta o espaçamento lateral geral do header em telas menores */
+    .nav-container {
+        padding: 1rem 1.5rem;
+    }
+
+    /* Reduz o espaçamento exagerado das letras da logo para caber na tela do celular */
+    .logo {
+        letter-spacing: 3px;
+        font-size: 0.85rem;
+    }
+
+    /* Transforma o menu de navegação para um formato compacto ou centralizado no mobile */
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.75rem; /* Letras menores para caberem no topo */
+    }
+
+    /* Reduz o tamanho do título principal do Hero no celular */
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    /* Reduz o padding das seções para otimizar o espaço vertical */
+    section {
+        padding: 5rem 1rem 3rem 1rem;
+    }
+
+    /* Reduz o tamanho da foto de perfil no mobile */
+    .terminal-prompt img {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+/* Para telas muito pequenas (smartphones compactos abaixo de 480px) */
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 0.6rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.7rem;
+    }
+
+    .logo {
+        letter-spacing: 1px;
+        font-size: 0.75rem;
+    }
 }
