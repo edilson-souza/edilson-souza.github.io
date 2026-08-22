@@ -1,5 +1,5 @@
-// Efeito simples de console log para simular o estilo de dev do modelo
-console.log("%croot@edilsondev:~# Portfólio Carregado com Sucesso!", "color: #7ee787; font-family: monospace; font-size: 14px;");
+// Efeito de console log estilo de dev
+console.log("%croot@edilsondev:~# Portfólio Carregado com Sucesso!", "color: #00ff66; font-family: monospace; font-size: 14px;");
 
 // Rolagem suave para os links do menu
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -14,6 +14,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Lógica de abertura e fechamento do Menu Hambúrguer Mobile
 document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
@@ -22,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             
-            // Opcional: Troca o ícone de barras (bars) para um "X" (times) ao abrir
             const icon = mobileMenu.querySelector('i');
             if (navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Fecha o menu automaticamente ao clicar em qualquer link (opcional, melhora a experiência)
+        // Fecha o menu automaticamente ao clicar em qualquer link
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');

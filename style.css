@@ -1,9 +1,9 @@
 :root {
-    --bg-color: #050805;       /* Preto com um tom sutilmente esverdeado/escuro */
-    --card-bg: #0a120a;       /* Fundo dos cards escuro com toque militar/matrix */
-    --text-primary: #c9d1d9;   /* Texto principal limpo para leitura */
-    --text-accent: #00ff66;    /* Verde Matrix vibrante para destaques */
-    --border-color: #1b3a1b;   /* Borda verde escurecida (estilo terminal) */
+    --bg-color: #050805;       
+    --card-bg: #0a120a;       
+    --text-primary: #c9d1d9;   
+    --text-accent: #00ff66;    
+    --border-color: #1b3a1b;   
 }
 
 * {
@@ -47,6 +47,13 @@ header {
     letter-spacing: 10px;
     text-align: left;
     text-shadow: 0 0 8px rgba(0, 255, 102, 0.4);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-accent);
 }
 
 .nav-links {
@@ -355,29 +362,17 @@ footer {
     margin-top: 4rem;
 }
 
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    #hero h1 {
-        font-size: 2.2rem;
-    }
-}
-
-/* --- AJUSTES DE RESPONSIVIDADE PARA CELULARES E TABLETS --- */
-
+/* --- RESPONSIVIDADE & MENU MOBILE --- */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block; /* Mostra os três traços no celular */
+        display: block; 
     }
 
-    /* Reduz o espaçamento exagerado das letras da logo para caber na tela do celular */
     .logo {
         letter-spacing: 3px;
         font-size: 0.85rem;
     }
 
-    /* Transforma o menu de navegação para um formato compacto ou centralizado no mobile */
     .nav-links {
         position: absolute;
         top: 100%;
@@ -389,8 +384,6 @@ footer {
         padding: 1.5rem 0;
         border-bottom: 1px solid var(--border-color);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-        
-        /* Oculta o menu inicialmente */
         display: none; 
     }
 
@@ -401,30 +394,25 @@ footer {
     .nav-links li {
         margin: 0.8rem 0;
     }
-}
 
     .nav-links a {
-        font-size: 0.75rem; /* Letras menores para caberem no topo */
+        font-size: 0.75rem; 
     }
 
-    /* Reduz o tamanho do título principal do Hero no celular */
     #hero h1 {
         font-size: 2rem;
     }
 
-    /* Reduz o padding das seções para otimizar o espaço vertical */
     section {
         padding: 5rem 1rem 3rem 1rem;
     }
 
-    /* Reduz o tamanho da foto de perfil no mobile */
     .terminal-prompt img {
         width: 140px;
         height: 140px;
+    }
 }
 
-
-/* Para telas muito pequenas (smartphones compactos abaixo de 480px) */
 @media (max-width: 480px) {
     .nav-links {
         gap: 0.6rem;
@@ -438,11 +426,4 @@ footer {
         letter-spacing: 1px;
         font-size: 0.75rem;
     }
-}
-
-.menu-toggle {
-    display: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: var(--text-accent);
 }
